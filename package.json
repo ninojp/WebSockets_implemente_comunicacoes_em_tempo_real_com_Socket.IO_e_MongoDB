@@ -1,0 +1,15 @@
+{
+  "name": "websockets_implemente_comunicacoes_em_tempo_real_com_socket.io_e_mongodb",
+  "version": "1.0.0",
+  "description": "Curso Alura sobre WebSocket",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "NinoJP",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

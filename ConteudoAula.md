@@ -72,6 +72,8 @@ Organizar melhor os arquivos por responsabilidade:
 
 No front-end, deixamos um arquivo responsável por lidar com as manipulações do HTML (documento.js) e outro responsável para lidar com as funções do Socket.IO (socket-front-documento.js).
 
-## Aula 03  
+## Aula 03 Avançando na Comunicação
 
-### Aula 03  - Video 1
+### Aula 03 Salas do Socket.IO - Video 1
+
+Nesta aula, aprendemos a implementar comunicações em tempo real utilizando WebSockets e Socket.IO. Foi abordado o conceito de salas no Socket.IO, onde é possível enviar informações apenas para os clientes que estão na mesma sala. Foi feita uma correção na página para exibir o nome do documento em que o cliente está conectado. Também foi criada uma função para selecionar o documento e emitir o evento correspondente. No lado do servidor, foi adicionada uma função para escutar o evento e colocar o cliente em uma sala com o nome do documento. Por fim, o código foi refinado para enviar o texto apenas para os clientes na mesma sala.

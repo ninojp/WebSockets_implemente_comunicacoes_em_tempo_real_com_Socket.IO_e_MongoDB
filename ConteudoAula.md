@@ -13,3 +13,48 @@ Nesta aula, foi apresentado o exemplo da aplicação AluraDocs, onde duas amigas
 ### Aula 01 - Criando o servidor - Video 3
 
 Nesta aula, começamos a desenvolver as funcionalidades do AluraDocs. Instalamos o Express e configuramos um servidor Node básico. Utilizamos o método express.static para mostrar as páginas HTML do projeto. Aprendemos a utilizar o nodemon para reiniciar automaticamente o servidor ao fazer alterações no projeto. Agora estamos prontos para implementar as primeiras funcionalidades do AluraDocs utilizando o protocolo WebSockets.
+
+### Aula 01 - Utilizando o Socket.IO - Video 4
+
+Nesta aula, aprendemos a utilizar o protocolo WebSockets no nosso projeto, utilizando a biblioteca Socket.IO. Instalamos o Socket.IO, criamos um servidor HTTP e conectamos o servidor com o Socket. No lado do front-end, adicionamos o script do Socket.IO na página e conectamos o cliente ao servidor. Testamos a conexão e verificamos que tudo funcionou corretamente.
+
+Devemos colocar a tag script <script src="/socket.io/socket.io.js"></script> na página HTML que queremos que seja conectada com o servidor. Assim, uma função io será disponibilizada no lado do cliente.
+
+Em seguida, devemos executar io(), e um evento chamado “connection” será automaticamente emitido para o servidor.
+
+O arquivo socket.io.js do atributo src acima será disponibilizado quando o servidor do Socket.IO estiver rodando. Em seguida, executando a função io() no lado do front-end, para cada cliente será emitido o evento “connection” para o servidor.
+
+### Aula 01 - Conclusão - Nessa aula, você aprendeu como
+
+Diferenciar o protocolo HTTP do WebSockets:
+
+O protocolo HTTP trabalha com o modelo requisição-resposta, que não é adequado para aplicações quando queremos criar uma comunicação bidirecional e em tempo real entre cliente e servidor. Para esses casos, utilizamos o protocolo WebSockets.
+Criar um servidor Socket.IO com Express e conectar um cliente:
+
+Você pode sempre consultar o passo a passo da documentação, na seção Get Started.
+Escutar o evento de conexão do cliente:
+
+Utilizamos o método io.on(), que recebe como primeiro parâmetro o nome do evento (por exemplo, “connection”) e como segundo parâmetro uma função callback, que será executada assim que o evento for escutado.
+
+## Aula 02 Trabalhando com Socket.IO - Video 1
+
+### Aula 02 Obtendo id do socket - Video 1
+
+Nesta aula, aprendemos a fazer a conexão de um cliente com o servidor utilizando o Socket.IO. Foi explicado que o socket disponibiliza um identificador único (id) para cada conexão. Ao abrir o documento em outra aba do navegador, é gerado outro id. O objetivo proposto foi fazer com que o que for digitado por um cliente apareça em tempo real para outro cliente. Para isso, foi necessário separar o código do arquivo servidor.js em outro arquivo chamado socket-back.js e exportar a constante io. Ao reiniciar o servidor, foi possível observar que a mensagem de cliente conectado foi exibida duas vezes devido às duas abas abertas no documento.html.
+
+### Aula 02 Emitindo eventos - Video 2
+
+Nesta aula, aprendemos a estabelecer a comunicação entre clientes do Socket.IO. Iniciamos ajustando o arquivo JavaScript relacionado à página HTML para capturar os valores digitados pelos clientes no campo de texto. Em seguida, identificamos o elemento HTML do campo de texto no arquivo HTML e o capturamos usando JavaScript. Utilizamos o evento "keyup" para executar uma função callback sempre que o usuário soltar uma tecla no campo de texto. Testamos a função exibindo mensagens no console do navegador. Por fim, atualizamos a função para exibir o texto atualizado no campo de texto no console do navegador.
+
+Você aprendeu como emitir o seu primeiro evento no Socket.IO com o método emit()!  
+Para isso, utilizamos esse método do lado do cliente, para em seguida poder escutá-lo do lado do servidor com o método on().  
+Também vimos que os eventos do Socket.IO podem carregar dados no segundo parâmetro do método emit(). No nosso caso, enviamos o texto do editor, um dado do tipo string. Mas além desse, quais outros tipos de dados eu posso enviar junto com os eventos?  
+O Socket.IO permite que qualquer dado serializável do JavaScript possa ser enviado junto com um evento. Um dado serializável é um dado que pode ser convertido em um determinado formato e, posteriormente, pode ser convertido de volta para sua forma original. Chamamos a recuperação do dado de desserialização.  
+O JavaScript possui os métodos nativos JSON.stringify() e JSON.parse() para, respectivamente, serializar e desserializar diversos tipos de dados, como os tipos primitivos, arrays e objetos. Alguns tipos de dados, como undefined, Function, Symbol, Infinity, NaN, entre outros, não são serializados corretamente com estes métodos, pois não são dados aceitos no formato JSON.
+
+### Aula 02 Do servidor para os clientes - Video 3
+
+Nesta aula, aprendemos a enviar informações simultaneamente para todos os clientes conectados a uma página de documento utilizando o método io.emit() no servidor. Também aprendemos a evitar que o texto seja enviado para o cliente que o digitou, utilizando o método socket.broadcast.emit(). Além disso, atualizamos a interface em tempo real para exibir o texto digitado pelos clientes.
+
+### Aula 02  - Video 4
+

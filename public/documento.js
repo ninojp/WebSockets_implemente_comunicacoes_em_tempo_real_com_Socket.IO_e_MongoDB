@@ -1,12 +1,14 @@
 "use strict";
-const socket = io();
+import { emitirTextoEditor } from "./socket-front-documento.js";
 
 const textoEditor = document.getElementById("editor-texto");
 
 textoEditor.addEventListener("keyup", () =>{
-    socket.emit("texto_digitado", textoEditor.value);// Cria um evento, emitindo o valor digitado
+    emitirTextoEditor(textoEditor.value);
 });
 
-socket.on("texto_digitado_cliente", (texto) => {
+function atualizaTextoEditor(texto){
     textoEditor.value = texto;
-} );
+}
+
+export {atualizaTextoEditor};

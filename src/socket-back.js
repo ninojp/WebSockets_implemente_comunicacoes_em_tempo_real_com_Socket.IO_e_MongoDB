@@ -9,4 +9,9 @@ io.on("connection", (socket) => {
         //Emite o evento para todos EXCETO, para quem emitiu
         socket.broadcast.emit("texto_digitado_cliente", texto);
     });
+    socket.on("disconnect", (motivo) => {
+        console.log(`O Cliente ID: ${socket.id}, foi desconectado!
+        Motivo: ${motivo}`);
+      });
 });
+

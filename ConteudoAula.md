@@ -36,7 +36,7 @@ Escutar o evento de conexão do cliente:
 
 Utilizamos o método io.on(), que recebe como primeiro parâmetro o nome do evento (por exemplo, “connection”) e como segundo parâmetro uma função callback, que será executada assim que o evento for escutado.
 
-## Aula 02 Trabalhando com Socket.IO - Video 1
+## Aula 02 Trabalhando com Socket.IO
 
 ### Aula 02 Obtendo id do socket - Video 1
 
@@ -56,5 +56,22 @@ O JavaScript possui os métodos nativos JSON.stringify() e JSON.parse() para, re
 
 Nesta aula, aprendemos a enviar informações simultaneamente para todos os clientes conectados a uma página de documento utilizando o método io.emit() no servidor. Também aprendemos a evitar que o texto seja enviado para o cliente que o digitou, utilizando o método socket.broadcast.emit(). Além disso, atualizamos a interface em tempo real para exibir o texto digitado pelos clientes.
 
-### Aula 02  - Video 4
+### Aula 02 Organizando arquivos - Video 4
 
+Nesta aula, aprendemos a melhorar a organização dos arquivos do projeto. Criamos um novo arquivo chamado socket-front-documento.js na pasta "public" e movemos a primeira linha do código de documento.js para esse novo arquivo. Em seguida, criamos uma função emitirTextoEditor em socket-front-documento.js para substituir o socket.emit em documento.js. Também criamos uma função atualizaTextoEditor em documento.js para substituir o código textoEditor.value = texto e exportamos essa função. Por fim, organizamos o socket.on movendo-o para socket-front-documento.js e chamamos a função atualizaTextoEditor dentro dele. Com essa refatoração, conseguimos separar as responsabilidades dos arquivos e obter uma melhor organização.
+
+### Aula 02 - Conclusão - Nessa aula, você aprendeu como
+
+Emitir seu primeiro evento a partir do cliente:
+
+No front-end, utilizamos socket.emit() para emitir o evento "texto_editor" para o servidor, junto com o texto que foi digitado.
+Emitir um evento para vários clientes a partir do servidor:
+
+No back-end, com io.emit(), podemos emitir um evento para todos os clientes ou, com socket.broadcast.emit(), podemos emitir para todos os clientes, exceto o cliente que está emitindo o evento.
+Organizar melhor os arquivos por responsabilidade:
+
+No front-end, deixamos um arquivo responsável por lidar com as manipulações do HTML (documento.js) e outro responsável para lidar com as funções do Socket.IO (socket-front-documento.js).
+
+## Aula 03  
+
+### Aula 03  - Video 1

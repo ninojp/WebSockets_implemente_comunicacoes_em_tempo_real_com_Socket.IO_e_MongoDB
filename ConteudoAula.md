@@ -4,7 +4,7 @@
 
 ### Aula 01 - Apresentação - Video 1
 
- Nesta aula, o instrutor Antônio Evaldo apresenta o objetivo do curso de WebSockets, que é ensinar uma nova forma de desenvolver aplicações web utilizando esse protocolo. Ele explica que o WebSockets permite a comunicação em tempo real entre cliente e servidor, sendo útil em aplicações como bate-papo em tempo real e jogos online. O projeto do curso será o AluraDocs, onde será possível adicionar, editar e excluir documentos de JavaScript, Node e Socket.IO. É recomendado ter conhecimento prévio em JavaScript para back-end e ter feito o curso de Node.js com Express e MongoDB.
+Nesta aula, o **instrutor** Antônio Evaldo apresenta o objetivo do curso de WebSockets, que é ensinar uma nova forma de desenvolver aplicações web utilizando esse protocolo. Ele explica que o WebSockets permite a comunicação em tempo real entre cliente e servidor, sendo útil em aplicações como bate-papo em tempo real e jogos online. O projeto do curso será o AluraDocs, onde será possível adicionar, editar e excluir documentos de JavaScript, Node e Socket.IO. É recomendado ter conhecimento prévio em JavaScript para back-end e ter feito o curso de Node.js com Express e MongoDB.
 
 ### Aula 01 - WebSockets e HTTP - Video 2
 
@@ -77,3 +77,12 @@ No front-end, deixamos um arquivo responsável por lidar com as manipulações d
 ### Aula 03 Salas do Socket.IO - Video 1
 
 Nesta aula, aprendemos a implementar comunicações em tempo real utilizando WebSockets e Socket.IO. Foi abordado o conceito de salas no Socket.IO, onde é possível enviar informações apenas para os clientes que estão na mesma sala. Foi feita uma correção na página para exibir o nome do documento em que o cliente está conectado. Também foi criada uma função para selecionar o documento e emitir o evento correspondente. No lado do servidor, foi adicionada uma função para escutar o evento e colocar o cliente em uma sala com o nome do documento. Por fim, o código foi refinado para enviar o texto apenas para os clientes na mesma sala.
+
+### Aula 03 Enviando para as salas corretas - Video 2
+
+Nesta aula, aprendemos a enviar informações para sockets específicos em uma sala do Socket.IO. Fizemos alterações no código para pegar o nome da sala dinamicamente. Também adicionamos o parâmetro nomeDocumento na função emitirTextoEditor e aprendemos a enviar múltiplas informações para um evento. Por fim, desestruturamos o objeto no socket-back.js para pegar diretamente as propriedades texto e nomeDocumento.  
+Mais detalhes em [Socket.IO Rooms](https://socket.io/docs/v4/rooms/)
+
+### Aula 03 Guardando os dados localmente - Video 3
+
+Nesta aula, aprendemos a guardar os dados localmente em uma aplicação utilizando Node.js. Criamos uma lista de documentos, onde cada documento é representado por um objeto com propriedades de nome e texto. Implementamos uma função chamada "encontrarDocumento" que utiliza o método "find()" do JavaScript para buscar o documento com o nome correspondente. Ao selecionar um documento, o texto é enviado de volta para os clientes e também é impresso no console.

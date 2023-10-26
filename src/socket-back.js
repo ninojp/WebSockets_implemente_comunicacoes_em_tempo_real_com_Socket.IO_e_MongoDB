@@ -7,11 +7,11 @@ const documentos = [
         texto: "Texto de JavaScript..."
     },
     {
-        nome: "Node.js",
+        nome: "Node",
         texto: "Texto de Node.js..."
     },
     {
-        nome: "Socket.IO",
+        nome: "Socket.io",
         texto: "Texto de Socket.IO..."
     }
 ]
@@ -25,11 +25,12 @@ io.on("connection", (socket) => {
         Motivo: ${motivo}`);
     });
     //--------------------------------------------------------------------------------------------
-    socket.on("selecionar_documento", (nomeDocumento) => {
+    socket.on("selecionar_documento", (nomeDocumento, devolverTexto) => {
         socket.join(nomeDocumento);
         const documento = encontrarDocumento(nomeDocumento);
-        if(){
-            socket.emit(documento);
+        if(documento){
+            // socket.emit("texto_documento", documento.texto);
+            devolverTexto(documento.texto);
         }
     });
     //--------------------------------------------------------------------------------------------
@@ -40,8 +41,12 @@ io.on("connection", (socket) => {
         //Socket emitindo o evento para todos EXCETO para quem emitiu
         // socket.broadcast.emit("texto_digitado_cliente", texto);
         //--------------------------------------------------------
-        //Socket emitindo o evento para a sala(room)
-        socket.to(nomeDocumento).emit("texto_digitado_cliente", texto);
+        const documento = encontrarDocumento(nomeDocumento);
+        if(documento){
+            documento.texto = texto;
+            //Socket emitindo o evento para a sala(room)
+            socket.to(nomeDocumento).emit("texto_digitado_cliente", texto);
+        }
     });
 });
 //-------------------------------------------------------------------------

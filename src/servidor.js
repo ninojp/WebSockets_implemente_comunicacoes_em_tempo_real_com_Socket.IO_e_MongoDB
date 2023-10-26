@@ -4,6 +4,7 @@ import url from "url";//Módulo interno, Node.js
 import path from "path";//Módulo interno, Node.js
 import http from "http";//Módulo interno, Node.js
 import { Server } from "socket.io";
+import "./dbConnect.js";
 
 const app = express();
 

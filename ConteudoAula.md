@@ -86,3 +86,31 @@ Mais detalhes em [Socket.IO Rooms](https://socket.io/docs/v4/rooms/)
 ### Aula 03 Guardando os dados localmente - Video 3
 
 Nesta aula, aprendemos a guardar os dados localmente em uma aplicação utilizando Node.js. Criamos uma lista de documentos, onde cada documento é representado por um objeto com propriedades de nome e texto. Implementamos uma função chamada "encontrarDocumento" que utiliza o método "find()" do JavaScript para buscar o documento com o nome correspondente. Ao selecionar um documento, o texto é enviado de volta para os clientes e também é impresso no console.
+
+### Aula 03 Enviando de volta para o cliente - Video 4
+
+Nesta aula, aprendemos a enviar o texto de um documento de volta para o cliente no front-end utilizando o Socket.IO. Utilizamos a emissão de eventos do servidor para o cliente, onde o servidor emite um evento de volta para o front-end com o texto do documento. Também aprendemos a utilizar o recurso de "Acknowledgements" do Socket.IO, onde o cliente emite um evento para o servidor e espera o reconhecimento desse evento, retornando alguma informação para o front-end. Além disso, aprendemos a salvar os textos dos documentos, utilizando a função encontrarDocumento para encontrar o documento desejado e atualizando o texto desse documento no servidor.
+
+### Aula 03 - Conclusão - Nessa aula, você aprendeu como
+
+Agrupar clientes em salas do Socket.IO:
+
+Utilizamos o método join() (do inglês “juntar”) para isso, passando como parâmetro o nome da sala na qual queremos colocar o cliente. No nosso caso, os nomes das salas eram os nomes dos documentos.
+Emitir eventos para uma sala específica:
+
+Para isso, utilizamos o método to() (do inglês “para”), passando como parâmetro o nome da sala para a qual queremos emitir o evento.
+Enviar um dado de volta para o cliente com Reconhecimento:
+
+Utilizamos esse recurso quando o cliente emite um evento e espera receber dados de volta do servidor, imitando o modelo de requisição-resposta do HTTP. Para tal, passamos uma função como último parâmetro de emit(), a obtemos na função callback do lado do servidor e a executamos, passando como parâmetro o dado que interessa ao cliente.
+
+## Aula 04 Utilizando o MongoDB
+
+### Aula 04 Criando um banco de dados - Video 1
+
+Nesta aula, aprendemos a criar um cluster no MongoDB Atlas para armazenar os dados do Alura Docs. Configuramos as opções necessárias, como provedor e região, e definimos as etapas de segurança, criando um usuário e senha para acessar o cluster. Criamos um banco de dados chamado "alura-websockets" e uma coleção chamada "documentos". Adicionamos um documento à coleção para verificar a conexão com o banco de dados posteriormente.
+
+### Aula 04 Conectando o banco ao projeto - Video 2
+
+Nesta aula, aprendemos a conectar o banco de dados do MongoDB Atlas com o nosso projeto utilizando o MongoDB Driver do Node.js. Configuramos a conexão com o MongoDB Atlas no arquivo dbConnect.js, utilizando o MongoClient e a string de conexão fornecida pelo banco de dados. Verificamos se a conexão foi bem-sucedida e exportamos a coleção "documentosColecao" para uso em outros arquivos.
+
+### Aula 04 Obtendo dados do banco - Video 3

@@ -114,3 +114,23 @@ Nesta aula, aprendemos a criar um cluster no MongoDB Atlas para armazenar os dad
 Nesta aula, aprendemos a conectar o banco de dados do MongoDB Atlas com o nosso projeto utilizando o MongoDB Driver do Node.js. Configuramos a conexão com o MongoDB Atlas no arquivo dbConnect.js, utilizando o MongoClient e a string de conexão fornecida pelo banco de dados. Verificamos se a conexão foi bem-sucedida e exportamos a coleção "documentosColecao" para uso em outros arquivos.
 
 ### Aula 04 Obtendo dados do banco - Video 3
+
+Nesta aula, aprendemos a modificar o método encontrarDocumento() para selecionar um documento do banco de dados MongoDB Atlas. Utilizamos o método findOne() para buscar um registro na coleção e realizamos adaptações no código para lidar com a promise retornada pelo método. Testamos o sistema para verificar se os documentos eram corretamente captados do banco de dados. Por fim, cadastramos os documentos "Node" e "Socket.io" no banco de dados.
+
+### Aula 04 Alterando dados do banco - Video 4
+
+Nesta aula, reorganizamos os arquivos do projeto, criando um novo arquivo chamado documentosDb.js para armazenar os métodos de operações no banco de dados. Movemos o método encontrarDocumento() para esse novo arquivo e o exportamos para uso em outros arquivos. Em seguida, implementamos a funcionalidade de alterar dados no documento. Criamos o método atualizaDocumento() no arquivo documentosDb.js utilizando o método updateOne() do MongoDB para atualizar o texto do documento no banco de dados. Importamos e utilizamos esse método no arquivo socket-back.js para atualizar o texto do documento quando um usuário digita no campo de texto. Testamos as funcionalidades do Alura Docs, verificando que as alterações são refletidas em tempo real em todas as janelas abertas e que as alterações são salvas no banco de dados.
+
+### Aula 04 - Conclusão - Nessa aula, você aprendeu como
+
+- Criar um banco de dados e conectá-lo com o Alura Docs:
+
+  - Criamos um cluster, um banco de dados e uma coleção no MongoDB Atlas. Em seguida, utilizamos o driver do Node.js para conectar o projeto ao banco de dados. Assim, conseguiremos fazer o projeto interagir com o banco de dados para persistir as informações dos documentos.
+
+- Obter dados do banco de dados:
+
+  - Utilizamos o método findOne (do inglês “encontrar um”) das coleções do MongoDB para buscar por um documento específico. No nosso caso, passamos um objeto com a propriedade nome, e seu valor é o nome do documento a ser encontrado. Com esse método, conseguimos obter o texto salvo no banco de dados para exibir na página de documento.
+
+- Alterar dados do banco de dados:
+
+  - Utilizamos o método updateOne (do inglês “atualizar um”) das coleções do MongoDB para editar um documento específico. O primeiro parâmetro é o de busca do documento, e o segundo parâmetro é um objeto que deve possuir propriedades específicas (por exemplo, $set), que irão indicar ao MongoDB como atualizar o documento. Com esse método, a Eduarda e a Juliana conseguem refletir as alterações dos textos dos documentos no banco de dados.

@@ -1,15 +1,27 @@
 "use strict";
-import {obterDocumentos, encontrarDocumento, atualizaDocumento} from "./documentosDb.js";
+import {obterDocumentos, encontrarDocumento, atualizaDocumento, adicionarDocumento} from "./documentosDb.js";
 import io from "./servidor.js";
 
 //-------------------------------------------------------------------
 //O Método .on() é usado para escutar(listen) os eventos na comunicação socket(client-servidor)
 io.on("connection", (socket) => {
+    //--------------------------------------------------------------------------------------------
     socket.on("obter_documentos", async (devolverDocumentos)=>{
         const documentos = await obterDocumentos();
         devolverDocumentos(documentos);
     });
-
+    //--------------------------------------------------------------------------------------------
+    socket.on("adicionar_documento", async (nome)=>{
+        const documentoExiste = (await encontrarDocumento(nome)) !== null;
+        if(documentoExiste){
+            socket.emit("documento_existente", nome);
+        }else{
+            const resultado = await adicionarDocumento(nome);
+            if(resultado.acknowledged){
+                io.emit("adicionar_documento_interface", nome);
+            }
+        }
+    });
     //--------------------------------------------------------------------------------------------
     console.log("Um cliente se conectou!", socket.id); 
     socket.on("disconnect", (motivo) => {

@@ -142,3 +142,14 @@ Nesta aula, reorganizamos os arquivos do projeto, criando um novo arquivo chamad
 Nesta aula, aprendemos a sincronizar os dados com o banco de dados antes de implementar a funcionalidade de adição de documentos. Foi mostrado como inserir elementos de forma dinâmica na interface usando JavaScript e como emitir e escutar eventos do Socket.IO para obter os documentos do banco de dados e atualizar a interface do usuário. Também testamos o funcionamento da função de inserção de links para os documentos obtidos do banco de dados.
 
 ### Aula 05 Adicionando um documento - Video 2
+
+Nesta aula, aprendemos a implementar a adição de documentos no Alura Docs. Capturamos o valor digitado no campo de texto do formulário, enviamos essa informação para o servidor e adicionamos o nome do documento no banco de dados. Também atualizamos a interface de todos os clientes quando um novo documento é adicionado. Além disso, fizemos com que o campo de texto seja esvaziado automaticamente após a adição do documento.
+
+### Aula 05 Tratando documento existente - Video 3
+
+Nesta aula, aprendemos a tratar o erro de adição de documentos duplicados no Alura Docs. Foi adicionada uma verificação no código para verificar se o documento já existe antes de adicioná-lo. Caso o documento já exista, é emitido um evento informando o usuário. Foi implementada uma função de callback no front-end para exibir uma mensagem de alerta caso o documento já exista.
+
+### Aula 05 Excluindo um documento - Video 4
+
+Na aula, Eduarda e Juliana implementaram a funcionalidade de remoção de documentos no Alura Docs. Eles adicionaram um botão "Excluir documento" na interface e fizeram as alterações necessárias nos arquivos HTML e JavaScript para tornar esse botão funcional. Ao clicar no botão, é emitido um evento para o servidor, que escuta esse evento e executa a função excluirDocumento() para deletar o documento do banco de dados. A operação de exclusão é confirmada no terminal e o documento é removido da interface do Alura Docs.
+

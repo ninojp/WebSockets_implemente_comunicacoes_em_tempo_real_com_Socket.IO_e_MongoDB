@@ -134,3 +134,11 @@ Nesta aula, reorganizamos os arquivos do projeto, criando um novo arquivo chamad
 - Alterar dados do banco de dados:
 
   - Utilizamos o método updateOne (do inglês “atualizar um”) das coleções do MongoDB para editar um documento específico. O primeiro parâmetro é o de busca do documento, e o segundo parâmetro é um objeto que deve possuir propriedades específicas (por exemplo, $set), que irão indicar ao MongoDB como atualizar o documento. Com esse método, a Eduarda e a Juliana conseguem refletir as alterações dos textos dos documentos no banco de dados.
+
+## Aula 05 Avançando o Alura Docks
+
+### Aula 05 Listando os documentos do banco - Video 1
+
+Nesta aula, aprendemos a sincronizar os dados com o banco de dados antes de implementar a funcionalidade de adição de documentos. Foi mostrado como inserir elementos de forma dinâmica na interface usando JavaScript e como emitir e escutar eventos do Socket.IO para obter os documentos do banco de dados e atualizar a interface do usuário. Também testamos o funcionamento da função de inserção de links para os documentos obtidos do banco de dados.
+
+### Aula 05 Adicionando um documento - Video 2

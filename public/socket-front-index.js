@@ -1,5 +1,5 @@
 "use strict";
-import { inserirLinkDocumento } from "./index.js";
+import { inserirLinkDocumento, removerLinkDocumento } from "./index.js";
 
 const socket = io();
 //----------------------------------------------------------
@@ -18,4 +18,9 @@ socket.on("adicionar_documento_interface", (nome)=>{
 socket.on("documento_existente", (nome)=>{
     alert(`O documento ${nome} já Existe!`);
 });
+//----------------------------------------------------------
+socket.on("excluir_documento_sucesso", (nome)=>{
+    removerLinkDocumento(nome);
+});
+//----------------------------------------------------------
 export {emitirAdicionarDocumento};

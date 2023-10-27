@@ -153,3 +153,20 @@ Nesta aula, aprendemos a tratar o erro de adição de documentos duplicados no A
 
 Na aula, Eduarda e Juliana implementaram a funcionalidade de remoção de documentos no Alura Docs. Eles adicionaram um botão "Excluir documento" na interface e fizeram as alterações necessárias nos arquivos HTML e JavaScript para tornar esse botão funcional. Ao clicar no botão, é emitido um evento para o servidor, que escuta esse evento e executa a função excluirDocumento() para deletar o documento do banco de dados. A operação de exclusão é confirmada no terminal e o documento é removido da interface do Alura Docs.
 
+### Aula 05 Atualizando diferentes páginas - Video 5
+
+Nesta aula, finalizamos a aplicação Alura Docs, refinando alguns pontos. Aprendemos a atualizar a interface após a exclusão de um documento, exibindo um alerta na tela e redirecionando o usuário para a página inicial. Também vimos como tratar o redirecionamento apenas para as pessoas que estão na página do documento excluído. Além disso, atualizamos a página inicial para remover o documento excluído da lista. Realizamos testes para verificar o funcionamento correto das funcionalidades.
+
+### Aula 05 - Conclusão - Nessa aula, você aprendeu como
+
+- Obter todos os documentos do banco de dados:
+  - Utilizamos o método find(), que retorna um Cursor do MongoDB. Para transformá-lo em um array que contém todos os documentos, utilizamos o método toArray(). Enviando essa informação de volta ao cliente, a tela inicial poderá mostrar os documentos do banco de dados em vez de uma lista estática.
+
+- Adicionar um documento:
+  - Utilizamos o método insertOne() para inserir um novo documento no MongoDB. Precisamos verificar se o documento não existe para então adicioná-lo. Por fim, o resultado da operação de adição possui a propriedade acknowledged, que informa se a operação foi reconhecida pelo banco. Em caso positivo, emitimos um evento de volta para os clientes para adicionar o documento na interface front-end.
+
+- Excluir um documento:
+  - Utilizamos o método deleteOne() para excluir um documento do MongoDB. O resultado da operação de exclusão possui a propriedade deletedCount, que informa se a operação foi reconhecida pelo banco. Em caso positivo, emitimos um evento de volta para todos os clientes para realizar as operações necessárias no front-end.
+
+- Atualizar diferentes páginas a partir do mesmo evento:
+  - A partir do evento de exclusão emitido pelo servidor, realizamos diferentes operações dependendo de qual página o cliente está. Quem estiver na página do documento excluído será redirecionado para a página inicial, e quem estiver na página inicial verá o documento ser excluído da lista.

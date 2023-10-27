@@ -25,4 +25,12 @@ function atualizaDocumento(nome, texto){
     { $set: {texto} } );
     return atualizacao;
 }
-export {obterDocumentos, adicionarDocumento, encontrarDocumento, atualizaDocumento};
+//-------------------------------------------------------------------------
+function excluirDocumento(nome){
+    const resultado = documentosColecao.deleteOne({
+        nome
+    });
+    return resultado;
+};
+//-------------------------------------------------------------------------
+export {obterDocumentos, adicionarDocumento, encontrarDocumento, atualizaDocumento, excluirDocumento};

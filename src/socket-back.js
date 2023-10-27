@@ -1,5 +1,5 @@
 "use strict";
-import {obterDocumentos, encontrarDocumento, atualizaDocumento, adicionarDocumento} from "./documentosDb.js";
+import {obterDocumentos, encontrarDocumento, atualizaDocumento, adicionarDocumento, excluirDocumento} from "./documentosDb.js";
 import io from "./servidor.js";
 
 //-------------------------------------------------------------------
@@ -51,6 +51,13 @@ io.on("connection", (socket) => {
         if(atualizacao.modifiedCount){
             //Socket emitindo o evento para a sala(room)
             socket.to(nomeDocumento).emit("texto_digitado_cliente", texto);
+        }
+    });
+    //--------------------------------------------------------------------------------------------
+    socket.on("excluir_documento", async (nome)=>{
+        const resultado = await excluirDocumento(nome);
+        if(resultado.deletedCount){
+            io.emit("excluir_documento_sucesso", nome);
         }
     });
 });
